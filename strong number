@@ -1,0 +1,29 @@
+import java.util.Scanner;
+public class Main{
+    public static void main(String[] args){
+        Scanner in=new Scanner(System.in);
+        int num=in.nextInt();
+        
+        int sum=0;
+        int num1=num;
+    while(num!=0){
+       int rev=num%10;
+        int mul=1;
+        
+        for(int i=1;i<=rev;i++){
+            mul=mul*i;
+            
+        }
+        sum=sum+mul;
+        num=num/10;
+        
+    }
+    System.out.println(sum);
+        if(sum==num1){
+            System.out.println("strng number");
+        }
+        else{
+            System.out.println("nt strng number");
+        }
+    }
+}
