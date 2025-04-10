@@ -1,0 +1,15 @@
+
+import java.util.Scanner;
+class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int n = scanner.nextInt();
+        int rows = 0;
+        while (n >= rows + 1) {
+            rows++;
+            n -= rows;
+        }
+
+        System.out.println(rows);
+    }
+}
