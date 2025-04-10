@@ -1,0 +1,18 @@
+import java.util.Scanner;
+import java.math.BigInteger;
+
+class Main {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int start = in.nextInt();
+        int end = in.nextInt();
+      
+        for (int i = start; i <= end; i++) {
+            BigInteger mul = BigInteger.ONE; // Initialize mul as BigInteger
+            for (int j = 1; j <= i; j++) {
+                mul = mul.multiply(BigInteger.valueOf(j)); // Multiply using BigInteger
+            }
+            System.out.println(mul);
+        }
+    }
+}
