@@ -1,0 +1,68 @@
+//only letters
+
+import java.util.Scanner;
+import java.util.Arrays;
+public class Main{
+    public static void main(String[] args){
+        Scanner in=new Scanner(System.in);
+        String w1=in.nextLine();
+        boolean found=false;
+        for(int i=0;i<=w1.length()-1;i++){
+            char ch=w1.charAt(i);
+            
+            if(!Character.isLetter(ch)){
+                found=true;
+                break;
+            }
+            
+            
+        }
+        if(!found){
+            System.out.println("only letter");
+        }
+        else{
+              System.out.println(" letter & num");
+        }
+    }
+}
+
+
+//only digits:
+
+import java.util.Scanner;
+import java.util.Arrays;
+public class Main{
+    public static void main(String[] args){
+        Scanner in=new Scanner(System.in);
+        String w1=in.nextLine();
+        boolean found=false;
+        for(int i=0;i<=w1.length()-1;i++){
+            char ch=w1.charAt(i);
+            
+            if(!Character.isDigit(ch)){
+                found=true;
+                break;
+            }
+            
+            
+        }
+        if(!found){
+            System.out.println("only num");
+        }
+        else{
+              System.out.println(" letter & num");
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
