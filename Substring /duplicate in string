@@ -1,0 +1,30 @@
+import java.util.Scanner;
+import java.util.Arrays;
+public class Main{
+    public static void main(String[] args){
+        Scanner in=new Scanner(System.in);
+        String w1=in.nextLine();
+        
+        for(int i=0;i<=w1.length()-1;i++){
+            char ch=w1.charAt(i);
+            int count=0;
+            for(int j=i+1;j<=w1.length()-1;j++){
+                  char ch1 = w1.charAt(j);
+                if(ch==ch1){
+                    count++;
+                }
+            }
+            if(count>0){
+                System.out.print(ch);
+            }
+        }
+            
+            
+    }
+}
+
+
+
+
+
+
