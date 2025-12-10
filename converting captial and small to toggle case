@@ -1,0 +1,29 @@
+import java.util.Scanner;
+
+public class Main{
+    public static void main(String[] args){
+        Scanner in=new Scanner(System.in);
+        String w1=in.nextLine();
+        String now="";
+      for(int i=0;i<=w1.length()-1;i++){
+          char ch=w1.charAt(i);
+          
+          if(Character.isLowerCase(ch)){
+              now=now+Character.toUpperCase(ch);
+          }
+          else if(Character.isUpperCase(ch)){
+                  now=now+Character.toLowerCase(ch);
+          }
+          else{
+              now=now+ch;
+          }
+      }
+      System.out.println(now);
+    }
+}
+
+
+
+
+
+
