@@ -1,0 +1,19 @@
+import java.util.Scanner;
+public class Main{
+    public static void main(String[] args){
+        Scanner in=new Scanner(System.in);
+        String w=in.nextLine();
+        
+        String rev="";
+        for(int i=w.length()-1;i>=0;i--){
+            rev=rev+w.charAt(i);
+        }
+    
+        if(w.equals(rev)){
+            System.out.println("plain");
+        }
+        else{
+            System.out.println("not plain");
+        }
+    }
+}
