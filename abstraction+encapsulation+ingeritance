@@ -1,0 +1,66 @@
+abstract class person{
+    private String name;
+    private int age;
+    
+    person(String name,int age){
+     this.name=name;
+     this.age=age;
+    }
+    
+    abstract void getrole();
+    
+    
+    public String getname(){
+        return name;
+    }
+    public int getage(){
+        return age;
+    }
+    
+   
+    
+}
+
+class teacher extends person{
+    private String subject;
+    
+    teacher(String name,int age,String subject){
+        super(name,age);
+        this.subject=subject;
+    }
+    
+    @Override
+    void getrole(){
+        System.out.println("name: "+getname());
+        System.out.println("age: "+getage());
+        System.out.println("subject: "+subject);
+    }
+}
+
+
+class student extends person{
+    private int gradelevel;
+    student(String name, int age,int gradelevel){
+        super(name,age);
+        this.gradelevel=gradelevel;
+    }
+    
+    @Override
+    void getrole(){
+        System.out.println("name: "+getname());
+         System.out.println("age: "+getage());
+        System.out.println("gradelevel: "+gradelevel);
+    }
+    }
+    
+    public class Main{
+        public static void main(String[] args){
+            person p1=new teacher("alice",35,"math");
+            person p2=new student("riya",12,7);
+            
+            p1.getrole();
+            System.out.println();
+            p2.getrole();
+        }
+    }
+
