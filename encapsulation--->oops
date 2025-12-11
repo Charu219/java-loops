@@ -1,0 +1,49 @@
+class bankaccount{
+    private String accountnum;
+    private double balance;
+    
+    public String getaccnum(){
+        return accountnum;
+    }
+    
+     public double getbal(){
+        return balance;
+    }
+    
+    public void setaccnum(String accnum){
+        this.accountnum=accnum;
+    }
+    
+   
+    
+    public void deposit(double amount){
+       if(amount>0){
+           this.balance=balance+amount;
+       }
+           
+    }
+    
+    public void withdraw(double amount){
+        if(amount>0 && amount<balance){
+            this.balance=balance-amount;
+        }
+    }
+    
+    }
+    
+    public class Main{
+        public static void main(String[] args){
+            bankaccount b=new bankaccount();
+            
+            b.setaccnum("12345678");
+            b.deposit(1000);
+            
+            
+            System.out.println("accountnumber: "+b.getaccnum());
+            System.out.println("deposit: "+b.getbal());
+            
+            b.withdraw(500);
+            System.out.println("bal after withdraw: "+b.getbal());
+        }
+    }
+
