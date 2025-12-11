@@ -1,0 +1,47 @@
+abstract class appliance{
+    String machinetype;
+    
+    appliance(String type){
+        this.machinetype=type;
+    }
+    abstract void turnon();
+    void turnoff(){
+        System.out.println(machinetype+"appliance turnoff");
+    }
+}
+
+class washingmachine extends appliance{
+    washingmachine(){
+        super("washingmachine");
+    }
+    @Override
+    void turnon(){
+        System.out.println(machinetype+"appliance turnon");
+    }
+}
+
+class hairdrier extends appliance{
+    hairdrier(){
+        super("hairdrier");
+    }
+    @Override
+    void turnon(){
+        System.out.println(machinetype+"appliance turnon");
+    }
+}
+
+public class Main{
+    public static void main(String[] args){
+        appliance a1=new washingmachine();
+        appliance a2= new hairdrier();
+        
+        
+        a1.turnon();
+        a1.turnoff();
+        a2.turnon();
+        a2.turnoff();
+        
+    }
+}
+
+
