@@ -30,3 +30,65 @@ public class Main{
         v2.stopengine();
     }
 }
+
+
+
+
+
+
+
+//ANOTHER WAY:
+abstract class Vehicle {
+    String vehicleType;  // field to store type
+
+    // constructor to set type
+    Vehicle(String type) {
+        this.vehicleType = type;
+    }
+
+    abstract void startengine();
+
+    void stopengine() {
+        System.out.println(vehicleType + " engine stopped");
+    }
+}
+
+class Car extends Vehicle {
+    Car() {
+        super("Car");  // pass type up to abstract class
+    }
+
+    @Override
+    void startengine() {
+        System.out.println(vehicleType + " engine started");
+    }
+}
+
+class Motorcycle extends Vehicle {
+    Motorcycle() {
+        super("Motorcycle");
+    }
+
+    @Override
+    void startengine() {
+        System.out.println(vehicleType + " engine started");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Vehicle v1 = new Car();
+        Vehicle v2 = new Motorcycle();
+
+        v1.startengine();
+        v1.stopengine();
+        v2.startengine();
+        v2.stopengine();
+    }
+}
+
+
+
+
+
+
