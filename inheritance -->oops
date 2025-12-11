@@ -1,0 +1,80 @@
+class employee{
+    String name;
+    double sal;
+    
+    employee(String name,double sal){
+        this.name=name;
+        this.sal=sal;
+    }
+    
+    void displaydetails(){
+        System.out.println(name);
+        System.out.println(sal);
+    }
+}
+
+class manager extends employee{
+    String department;
+    
+    manager(String name,double sal,String department){
+        super(name,sal);
+        this.department=department;
+        
+    }
+    @Override
+    void displaydetails(){
+         super.displaydetails();
+         System.out.println(department);
+    }
+}
+
+class developer extends employee{
+    String programminglan;
+    developer(String name,double sal,String programminglan){
+        super(name,sal);
+        this.programminglan=programminglan;
+    }
+    @Override
+    void displaydetails(){
+       super.displaydetails();
+         System.out.println(programminglan);
+    }
+}
+
+public class Main{
+    public static void main(String[] args){
+        manager m=new manager("Alice",9000,"HR");
+        developer n=new developer("bob",8000,"java");
+        
+        m.displaydetails();
+        n.displaydetails();
+       
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
