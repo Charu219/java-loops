@@ -1,0 +1,19 @@
+import java.util.Scanner;
+public class Main{
+    public static void main(String[] args){
+        Scanner in=new Scanner(System.in);
+        int a=in.nextInt();
+        int b=in.nextInt();
+        try{
+            int ans=a/b;
+            System.out.println("answer is "+ans);
+        }
+        catch(ArithmeticException e){
+            System.out.println("error is " +e.getMessage());
+        }
+        
+        finally{
+            System.out.println("always runs");
+        }
+    }
+}
