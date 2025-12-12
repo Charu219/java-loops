@@ -1,0 +1,21 @@
+import java.util.Scanner;
+public class Main{
+    public static void main(String[] args){
+       Scanner in=new Scanner(System.in);
+       int arr[]=new int[3];
+       for(int i=0;i<arr.length;i++){
+           arr[i]=in.nextInt();
+       }
+        try{
+         int c=arr[5];
+          System.out.println(c);
+        }
+        catch(ArrayIndexOutOfBoundsException e){
+            System.out.println("error is " +e.getMessage());
+        }
+        
+        finally{
+            System.out.println("always runs");
+        }
+    }
+}
