@@ -1,0 +1,23 @@
+import java.util.Scanner;
+public class Main{
+    public static void main(String[] args){
+       Scanner in=new Scanner(System.in);
+       int age=in.nextInt();
+       
+        try{
+         if(age<0 || age>120){
+         throw new IllegalArgumentException("invalidage");
+        }
+         System.out.println(age);
+        }
+    
+        catch(IllegalArgumentException e){
+            System.out.println("error is " +e.getMessage());
+        }
+        
+        
+        finally{
+            System.out.println("always runs");
+        }
+    }
+}
