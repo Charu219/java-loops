@@ -1,0 +1,78 @@
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+
+        // create Stack
+        Stack<Integer> stack = new Stack<>();
+
+        // push()
+        stack.push(10);
+        stack.push(20);
+        stack.push(30);
+        System.out.println("After push(): " + stack);
+
+        // add() (Stack inherits this from Vector)
+        stack.add(40);
+        System.out.println("After add(): " + stack);
+
+        // peek()
+        System.out.println("Top element (peek): " + stack.peek());
+
+        // pop()
+        System.out.println("Popped element: " + stack.pop());
+        System.out.println("After pop(): " + stack);
+
+        // get()
+        System.out.println("Element at index 1: " + stack.get(1));
+
+        // search()
+        System.out.println("Position of 20 (from top): " + stack.search(20));
+
+        // size()
+        System.out.println("Size of stack: " + stack.size());
+
+        // contains()
+        System.out.println("Contains 10? " + stack.contains(10));
+
+        // empty()
+        System.out.println("Is stack empty? " + stack.empty());
+
+        // iterator()
+        System.out.print("Using iterator(): ");
+        Iterator<Integer> it = stack.iterator();
+        while (it.hasNext()) {
+            System.out.print(it.next() + " ");
+        }
+        System.out.println();
+
+        // listIterator()
+        System.out.print("Using listIterator(): ");
+        ListIterator<Integer> lit = stack.listIterator();
+        while (lit.hasNext()) {
+            System.out.print(lit.next() + " ");
+        }
+        System.out.println();
+
+        // clear()
+        stack.clear();
+        System.out.println("After clear(): " + stack);
+    }
+}
+
+OUTPUT:
+After push(): [10, 20, 30]
+After add(): [10, 20, 30, 40]
+Top element (peek): 40
+Popped element: 40
+After pop(): [10, 20, 30]
+Element at index 1: 20
+Position of 20 (from top): 2
+Size of stack: 3
+Contains 10? true
+Is stack empty? false
+Using iterator(): 10 20 30
+Using listIterator(): 10 20 30
+After clear(): []
+
+
