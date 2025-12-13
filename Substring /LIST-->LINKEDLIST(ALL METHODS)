@@ -1,0 +1,142 @@
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+
+        // create LinkedList
+        LinkedList<Integer> list = new LinkedList<>();
+
+        // add()
+        list.add(10);
+        list.add(20);
+        list.add(30);
+        list.add(20);
+        System.out.println("After add(): " + list);
+
+        // addFirst()
+        list.addFirst(5);
+        System.out.println("After addFirst(): " + list);
+
+        // addLast()
+        list.addLast(40);
+        System.out.println("After addLast(): " + list);
+
+        // get()
+        System.out.println("Element at index 2: " + list.get(2));
+
+        // getFirst()
+        System.out.println("First element: " + list.getFirst());
+
+        // getLast()
+        System.out.println("Last element: " + list.getLast());
+
+        // set()
+        list.set(1, 15);
+        System.out.println("After set(): " + list);
+
+        // remove(index)
+        list.remove(2);
+        System.out.println("After remove(index): " + list);
+
+        // remove(Object)
+        list.remove(Integer.valueOf(20));
+        System.out.println("After remove(value 20): " + list);
+
+        // size()
+        System.out.println("Size: " + list.size());
+
+        // contains()
+        System.out.println("Contains 30? " + list.contains(30));
+
+        // isEmpty()
+        System.out.println("Is list empty? " + list.isEmpty());
+
+        // indexOf()
+        System.out.println("First index of 20: " + list.indexOf(20));
+
+        // lastIndexOf()
+        System.out.println("Last index of 20: " + list.lastIndexOf(20));
+
+        // addAll()
+        LinkedList<Integer> list2 = new LinkedList<>();
+        list2.add(100);
+        list2.add(200);
+        list.addAll(list2);
+        System.out.println("After addAll(): " + list);
+
+        // removeAll()
+        list.removeAll(list2);
+        System.out.println("After removeAll(): " + list);
+
+        // removeIf()
+        list.removeIf(n -> n % 2 == 0);
+        System.out.println("After removeIf(even): " + list);
+
+        // replaceAll()
+        list.replaceAll(n -> n * 2);
+        System.out.println("After replaceAll(): " + list);
+
+        // sort()
+        Collections.sort(list);
+        System.out.println("After sort(): " + list);
+
+        // iterator()
+        System.out.print("Using iterator(): ");
+        Iterator<Integer> it = list.iterator();
+        while (it.hasNext()) {
+            System.out.print(it.next() + " ");
+        }
+        System.out.println();
+
+        // listIterator()
+        System.out.print("Using listIterator(): ");
+        ListIterator<Integer> lit = list.listIterator();
+        while (lit.hasNext()) {
+            System.out.print(lit.next() + " ");
+        }
+        System.out.println();
+
+        // clear()
+        list.clear();
+        System.out.println("After clear(): " + list);
+    }
+}
+
+
+OUTPUT:
+After add(): [10, 20, 30, 20]
+After addFirst(): [5, 10, 20, 30, 20]
+After addLast(): [5, 10, 20, 30, 20, 40]
+Element at index 2: 20
+First element: 5
+Last element: 40
+After set(): [5, 15, 20, 30, 20, 40]
+After remove(index): [5, 15, 30, 20, 40]
+After remove(value 20): [5, 15, 30, 40]
+Size: 4
+Contains 30? true
+Is list empty? false
+First index of 20: -1
+Last index of 20: -1
+After addAll(): [5, 15, 30, 40, 100, 200]
+After removeAll(): [5, 15, 30, 40]
+After removeIf(even): [5, 15]
+After replaceAll(): [10, 30]
+After sort(): [10, 30]
+Using iterator(): 10 30
+Using listIterator(): 10 30
+After clear(): []
+
+
+
+
+
+
+
+
+
+
+
+
+
+
