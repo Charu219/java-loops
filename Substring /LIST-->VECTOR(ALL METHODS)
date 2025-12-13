@@ -1,0 +1,126 @@
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+
+        // create Vector
+        Vector<Integer> v = new Vector<>();
+
+        // add()
+        v.add(10);
+        v.add(20);
+        v.add(30);
+        v.add(20);
+        System.out.println("After add(): " + v);
+
+        // add(index, element)
+        v.add(2, 25);
+        System.out.println("After add at index 2: " + v);
+
+        // get()
+        System.out.println("Element at index 3: " + v.get(3));
+
+        // set()
+        v.set(1, 15);
+        System.out.println("After set(): " + v);
+
+        // remove(index)
+        v.remove(0);
+        System.out.println("After remove(index): " + v);
+
+        // remove(Object)
+        v.remove(Integer.valueOf(20));
+        System.out.println("After remove(value 20): " + v);
+
+        // size()
+        System.out.println("Size: " + v.size());
+
+        // contains()
+        System.out.println("Contains 30? " + v.contains(30));
+
+        // isEmpty()
+        System.out.println("Is vector empty? " + v.isEmpty());
+
+        // indexOf()
+        System.out.println("First index of 20: " + v.indexOf(20));
+
+        // lastIndexOf()
+        System.out.println("Last index of 20: " + v.lastIndexOf(20));
+
+        // toArray()
+        Object[] arr = v.toArray();
+        System.out.print("Vector to array: ");
+        for (Object o : arr) {
+            System.out.print(o + " ");
+        }
+        System.out.println();
+
+        // addAll()
+        Vector<Integer> v2 = new Vector<>();
+        v2.add(100);
+        v2.add(200);
+        v.addAll(v2);
+        System.out.println("After addAll(): " + v);
+
+        // removeAll()
+        v.removeAll(v2);
+        System.out.println("After removeAll(): " + v);
+
+        // removeIf()
+        v.removeIf(n -> n % 2 == 0);
+        System.out.println("After removeIf(even): " + v);
+
+        // replaceAll()
+        v.replaceAll(n -> n * 2);
+        System.out.println("After replaceAll(): " + v);
+
+        // sort()
+        Collections.sort(v);
+        System.out.println("After sort(): " + v);
+
+        // iterator()
+        System.out.print("Using iterator(): ");
+        Iterator<Integer> it = v.iterator();
+        while (it.hasNext()) {
+            System.out.print(it.next() + " ");
+        }
+        System.out.println();
+
+        // listIterator()
+        System.out.print("Using listIterator(): ");
+        ListIterator<Integer> lit = v.listIterator();
+        while (lit.hasNext()) {
+            System.out.print(lit.next() + " ");
+        }
+        System.out.println();
+
+        // clear()
+        v.clear();
+        System.out.println("After clear(): " + v);
+    }
+}
+
+
+OUTPUT:
+After add(): [10, 20, 30, 20]
+After add at index 2: [10, 20, 25, 30, 20]
+Element at index 3: 30
+After set(): [10, 15, 25, 30, 20]
+After remove(index): [15, 25, 30, 20]
+After remove(value 20): [15, 25, 30]
+Size: 3
+Contains 30? true
+Is vector empty? false
+First index of 20: -1
+Last index of 20: -1
+Vector to array: 15 25 30
+After addAll(): [15, 25, 30, 100, 200]
+After removeAll(): [15, 25, 30]
+After removeIf(even): [15, 25]
+After replaceAll(): [30, 50]
+After sort(): [30, 50]
+Using iterator(): 30 50
+Using listIterator(): 30 50
+After clear(): []
+
+
