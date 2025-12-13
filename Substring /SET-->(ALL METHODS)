@@ -1,0 +1,79 @@
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+
+        // create HashSet
+        HashSet<Integer> set = new HashSet<>();
+
+        // add()
+        set.add(10);
+        set.add(20);
+        set.add(30);
+        set.add(20); // duplicate (ignored)
+        System.out.println("After add(): " + set);
+
+        // remove()
+        set.remove(10);
+        System.out.println("After remove(10): " + set);
+
+        // size()
+        System.out.println("Size: " + set.size());
+
+        // contains()
+        System.out.println("Contains 30? " + set.contains(30));
+
+        // isEmpty()
+        System.out.println("Is set empty? " + set.isEmpty());
+
+        // iterator()
+        System.out.print("Using iterator(): ");
+        Iterator<Integer> it = set.iterator();
+        while (it.hasNext()) {
+            System.out.print(it.next() + " ");
+        }
+        System.out.println();
+
+        // toArray()
+        Object[] arr = set.toArray();
+        System.out.print("Set to array: ");
+        for (Object o : arr) {
+            System.out.print(o + " ");
+        }
+        System.out.println();
+
+        // addAll()
+        HashSet<Integer> set2 = new HashSet<>();
+        set2.add(30);
+        set2.add(40);
+        set.addAll(set2);
+        System.out.println("After addAll(): " + set);
+
+        // removeAll()
+        set.removeAll(set2);
+        System.out.println("After removeAll(): " + set);
+
+        // add again for next operations
+        set.add(20);
+        set.add(40);
+        System.out.println("Before retainAll(): " + set);
+
+        // retainAll()
+        set.retainAll(set2);
+        System.out.println("After retainAll(): " + set);
+
+        // add elements again
+        set.add(15);
+        set.add(25);
+        set.add(30);
+        System.out.println("Before removeIf(): " + set);
+
+        // removeIf()
+        set.removeIf(n -> n % 2 == 0);
+        System.out.println("After removeIf(even): " + set);
+
+        // clear()
+        set.clear();
+        System.out.println("After clear(): " + set);
+    }
+}
